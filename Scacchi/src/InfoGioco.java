@@ -35,7 +35,7 @@ public class InfoGioco implements ActionListener{
 		img = new JLabel(image, SwingConstants.CENTER);
 		p1.add(img);
 		
-		label = new JLabel("<html><br /><font size=5 color=red><center><i> INFORMAZIONI </i></center></font><br /><br /><font size=4><i> Titolo: </i> 8 x 8 - il Re è morto <br /><br /><font size=4><i> Autrici: </i> Luisa Zanini & Lisa Bianconi <br /><br /> <i> Anno di creazione: </i> 2015 <br /><br /><center> Realizzato in Java </center></font><br /><br /><br /></html>", SwingConstants.CENTER);
+		label = new JLabel("<html><br /><font size=5 color=red><center><i> INFORMAZIONI </i></center></font><br /><br /><font size=4><i> Titolo: </i> 8 x 8 - il Re e' morto <br /><br /><font size=4><i> Autrici: </i> Luisa Zanini & Lisa Bianconi <br /><br /> <i> Anno di creazione: </i> 2015 <br /><br /><center> Realizzato in Java </center></font><br /><br /><br /></html>", SwingConstants.CENTER);
 		label.setVerticalAlignment(SwingConstants.CENTER);
 		p2a.add(label);
 		
