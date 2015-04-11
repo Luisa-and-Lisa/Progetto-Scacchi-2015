@@ -1,10 +1,11 @@
 import java.awt.*;
-
 import javax.swing.*;
-
 import java.awt.event.*;
 import java.awt.geom.*; 
 
+/**
+ * Classe che crea e disegna la scacchiera 
+ */
 public class Scacchiera extends JPanel implements MouseListener, MouseMotionListener{
 	
 	private Shape [][] board; 
@@ -13,7 +14,6 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 	private PosizioneCaselle pos[][];
 	protected int Turno;
 	private int x, y;
-	
 	private ControllaMossa Mossa;
 	private Image imgPezzo;
 	private PosizioneCaselle temp = new PosizioneCaselle(0,0);
@@ -126,8 +126,8 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 		
 		addMouseMotionListener(this);
 		
-        x = e.getX() - 40;
-        y = e.getY() - 40;
+        	x = e.getX() - 40;
+        	y = e.getY() - 40;
 		
 		Coord = PixelToCoord(x,y);
 		trovato = false;
@@ -165,46 +165,45 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 		}
 	}
 	
-    public void mouseDragged(MouseEvent e) {
+    	public void mouseDragged(MouseEvent e) {
     	
-    	if (trovato){			
+    		if (trovato){			
 			temp.PixelX = e.getX() - 40;
 			temp.PixelY = e.getY() - 40;
-			repaint(tm, temp.PixelX-300, temp.PixelY-300, 720, 720); //40 40 160 160
+			repaint(tm, temp.PixelX-300, temp.PixelY-300, 720, 720);
 			e.consume();		
-    	}
+    		}
 	}
     
-    public void mouseReleased(MouseEvent e) {
+    	public void mouseReleased(MouseEvent e) {
    	
-    	if (trovato){	
-	    	x = e.getX() - 40;
+    		if (trovato){	
+	    		x = e.getX() - 40;
 			y = e.getY() - 40;
-	    	Coord = PixelToCoord(x,y);
-	        PosizioneCaselle posFinale = pos[Coord[0]][Coord[1]];
-	        Turno = Mossa.Sposta(ProxPezzo, posIniziale, posFinale, Turno, false);
+	    		Coord = PixelToCoord(x,y);
+	        	PosizioneCaselle posFinale = pos[Coord[0]][Coord[1]];
+	        	Turno = Mossa.Sposta(ProxPezzo, posIniziale, posFinale, Turno, false);
 			repaint();
 			pCliccato--;
 			removeMouseMotionListener(this);
 			repaint();
 			e.consume();
+    		}	
     	}	
-    }	
     
 	public void mouseClicked(MouseEvent e) {
 
 	}
 
-    public void mouseEntered(MouseEvent e) {
+    	public void mouseEntered(MouseEvent e) {
 
-    }
+	}
 
-    public void mouseExited(MouseEvent e) {
+    	public void mouseExited(MouseEvent e) {
 
-    }
+	}
 
-    public void mouseMoved(MouseEvent e) {
+    	public void mouseMoved(MouseEvent e) {
 
-    }
-	
+    	}
 }
