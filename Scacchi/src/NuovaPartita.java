@@ -2,10 +2,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
+import javax.sound.sampled.*;
 import javax.swing.*;
+
+import Gioco.Scacchi.NuovaPartita;
 
 public class NuovaPartita{
 
+	private static Clip clip;
 	private Pezzo [] pBianco = new Pezzo[16];
 	private Pezzo [] pNero = new Pezzo[16];
 	private PosizioneCaselle[][] pos = new PosizioneCaselle[8][8]; //Posizione dei pezzi sulla scacchiera
@@ -23,6 +27,23 @@ public class NuovaPartita{
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Dimension screenSize = tk.getScreenSize(); //Dimensioni schermo
 		int width = (int) screenSize.getWidth(); //Larghezza schermo
+		
+		try {
+			File fileSuono = new File("../Scacchi/src/img/River_flows_in_you.wav");
+			AudioInputStream audio = AudioSystem.getAudioInputStream(fileSuono);
+			clip = AudioSystem.getClip();
+			clip.open(audio);
+			
+			clip.loop(Clip.LOOP_CONTINUOUSLY);
+			clip.loop(-1);
+			//clip.start();
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
+			e.printStackTrace();
+		}
 		
 		//Crea le posizioni
 		for(int j=0; j<8; j++)
@@ -114,7 +135,8 @@ public class NuovaPartita{
 			public void actionPerformed(ActionEvent e) {
 
 				NewScacchi.dispose();
-				new NuovaPartita();
+				clip.stop();
+				new NuovaPartita();	
 			}
 		});
 		
