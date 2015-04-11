@@ -1,8 +1,10 @@
 import java.awt.*;
 import java.util.*;
-
 import javax.swing.*;
 
+/**
+ * Classe che effettua tutti i controlli su una mossa
+ */
 public class ControllaMossa extends JPanel{
 	
 	private ControllaMossa Mossa;
@@ -64,7 +66,7 @@ public class ControllaMossa extends JPanel{
 			if (Scacco){
 				ImageIcon icona = new ImageIcon(ReAvv.immagine);
 				JOptionPane.showMessageDialog(null, "SCACCO AL RE " + coloreAvv.toUpperCase(), "ATTENZIONE", JOptionPane.INFORMATION_MESSAGE, icona); 
-				// Controlla se è Scacco Matto
+				// Controlla lo Scacco Matto
 				if (VerificaScaccoMatto(PezziAvv, TurnoFinale))
 					new FinePartita(Frame, coloreAvv, "ScaccoMatto");
 			}
@@ -78,7 +80,7 @@ public class ControllaMossa extends JPanel{
 	}
 	
 	/**
-	 * Controlla la validità della mossa effettuata ed eventualmente lo stato di scacco o la promozione di un pedone
+	 * Controlla la validita' della mossa effettuata ed eventualmente lo stato di scacco o la promozione di un pedone
 	 */
 	public int Controlla(Pezzo ProxPezzo, PosizioneCaselle posIniziale, PosizioneCaselle posFinale, int Turno, boolean ControlloScacco){
 		
@@ -125,7 +127,7 @@ public class ControllaMossa extends JPanel{
 			}
 		}		
 		
-		// Controlla se il pedone mosso è da promuovere
+		// Controlla se il pedone mosso e' da promuovere
 		if (posTrovata == true && ProxPezzo.nome == "Pedone" && (ProxPezzo.getPos().CoordY == 0 || ProxPezzo.getPos().CoordY == 7))
 			new Promozione(Frame, ProxPezzo, pBianco, pNero, Mossa, Turno);
 		
