@@ -28,9 +28,9 @@ public abstract class Pezzo {
 	}
 	
 	/** 
-	 * Stringa vuota: la casella è libera
-	 * Colore uguale a "nero": la casella è occupata da un pezzo nero
-	 * Colore uguale a "bianco": la casella è occupata da un pezzo bianco
+	 * Stringa vuota: la casella e' libera
+	 * Colore uguale a "nero": la casella e' occupata da un pezzo nero
+	 * Colore uguale a "bianco": la casella e' occupata da un pezzo bianco
 	 */
 	public void setPos(PosizioneCaselle pos){
 		
@@ -45,7 +45,7 @@ public abstract class Pezzo {
 	public abstract PosizioneCaselle[] MossePermesse(PosizioneCaselle pos[][]);
 	
 	/**
-	 * Metodo usato per i pedoni, poichè solo loro mangiano in modo diverso da come muovono
+	 * Metodo usato per i pedoni, dato che solo loro mangiano in modo diverso da come muovono
 	 */
 	public abstract PosizioneCaselle[] MossePermesseMangia(PosizioneCaselle pos[][]);
 }
