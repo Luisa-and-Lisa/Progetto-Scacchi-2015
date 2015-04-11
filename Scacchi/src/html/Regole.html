@@ -26,7 +26,19 @@ Un Pedone pu&ograve; muovere avanti di una casella, se questa &egrave; libera. I
 I Pedoni sono i soli pezzi che catturano diversamente da come si muovono. Possono catturare un pezzo nemico se questo si trova in una delle due caselle diagonalmente in avanti, 
 ma non pu&ograve; muovere in queste caselle se esse sono libere. Se un pedone avanza fino all&#180;ottava traversa, allora viene promosso, ossia sostituito con una Regina, una Torre, un Alfiere o un Cavallo (a scelta del giocatore). Nella pratica viene quasi sempre scambiato con la Regina. <br /><br />
 
-<b> Regole non implementate in "8x8 il Re &egrave; morto" </b></center><br />
+<center><b> Lo scopo del gioco</b></center><br/>
+L&#180;obbiettivo del giocatore &egrave; quello di battere l&#180;avversario dando "scacco matto" (dal persiano Shah M&agrave;t = il re &egrave; morto) al suo Re. Questo accade quando il Re nemico si trova sotto scacco, cio&egrave; sotto la minaccia diretta dei pezzi avversari, e , non ha la possibilit&agrave; di sottrarsi ad essa (cio&egrave; sarebbe sicuramente catturato alla mossa successiva, se non si trattasse del Re). 
+Lo "scacco" invece &egrave; l&#180;attacco (parabile) che un pezzo avversario porta al Re. Non &egrave; obbligatorio che lo scacco sia annunciato verbalmente, e nella pratica di torneo non lo &egrave; quasi mai. L&#180;avversario non pu&ograve; eseguire alcuna mossa che metta o lasci il proprio re sotto "scacco". 
+
+<center><b>Patta</b></center><br/>
+Il gioco termina obbligatoriamente in parit&agrave; (patta) nei seguenti casi:
+ <ul type=”disc”>
+   <li> se restano sulla scacchiera soltanto i due re;</li>
+   <li> se la situazione &egrave; tale per cui nessuno dei due giocatori pu&ograve; dare scacco matto all'altro, anche in caso di difesa peggiore. Ad esempio re e cavallo contro re &egrave; patta, ma non re e due cavalli contro re, dato che una posizione di matto esiste (anche se a gioco corretto non pu&ograve; essere forzata);</li>
+   <li> se il giocatore a cui tocca muovere non pu&ograve; muovere alcun pezzo, ma il suo re non &egrave; sotto scacco (stallo).</li>
+ </ul>
+
+<center><b> Regole non implementate in "8x8 il Re &egrave; morto" </b></center><br />
 In questo gioco non &egrave; implementata l&#180;intelligenza artificiale, &egrave; solo un gioco tra persone.
 Non &egrave; implementato il movimento iniziale del Pedone che gli permette di muoversi di due caselle in avanti (purch&egrave; siano libere),
 e quindi non &egrave; previsto l&#180;en passant. Non &egrave; implementato l&#180;arrocco. <br />
