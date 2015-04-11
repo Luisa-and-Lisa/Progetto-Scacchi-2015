@@ -1,9 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
-
+/**
+ * Classe che mostra le informazioni dell'applicazione
+ */
 public class InfoGioco implements ActionListener{
 
 	private JFrame Info;
@@ -12,7 +13,7 @@ public class InfoGioco implements ActionListener{
 	
 	public InfoGioco(){
 		
-		Info = new JFrame("Informazioni: 8 x 8 - il Re è morto");
+		Info = new JFrame("Informazioni: 8 x 8 - il Re e' morto");
 		
 		JPanel p1 = new JPanel();
 		JPanel p2 = new JPanel();
@@ -34,11 +35,11 @@ public class InfoGioco implements ActionListener{
 		img = new JLabel(image, SwingConstants.CENTER);
 		p1.add(img);
 		
-		label = new JLabel("<html><br /><font size=5 color=red><center><i> INFORMAZIONI </i></center></font><br /><br /><font size=4><i> Titolo: </i> 8 x 8 - il Re è morto <br /><br /><font size=4><i> Autrici: </i> Luisa Zanini & Lisa Bianconi <br /><br /> <i> Anno di creazione: </i> 2015 <br /><br /><center> Realizzato in Java </center></font><br /><br /><br /></html>", SwingConstants.CENTER);
+		label = new JLabel("<html><br /><font size=5 color=red><center><i> INFORMAZIONI </i></center></font><br /><br /><font size=4><i> Titolo: </i> 8 x 8 - il Re Ã¨ morto <br /><br /><font size=4><i> Autrici: </i> Luisa Zanini & Lisa Bianconi <br /><br /> <i> Anno di creazione: </i> 2015 <br /><br /><center> Realizzato in Java </center></font><br /><br /><br /></html>", SwingConstants.CENTER);
 		label.setVerticalAlignment(SwingConstants.CENTER);
 		p2a.add(label);
 		
-		JButton Ok = new JButton("       OK        ");
+		JButton Ok = new JButton("        OK        ");
 		p2b.add(Ok);
 		Ok.addActionListener(this);
 		
