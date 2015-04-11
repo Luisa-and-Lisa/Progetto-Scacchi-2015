@@ -37,7 +37,7 @@ public class RegoleGioco{
 	    }
 
 		JScrollPane scroll = new JScrollPane(text);
-		scroll.setPreferredSize(new Dimension(900, height-40));
+		scroll.setPreferredSize(new Dimension(900, height-60));
 		cont.add(scroll);
 		
 		Regole.setSize(width,height);
