@@ -22,14 +22,14 @@ public class Main {
 				JPanel p1 = new JPanel();
 				JPanel p2 = new JPanel();
 				
-				Scacchi = new JFrame("8 x 8 - il Re è morto");
+				Scacchi = new JFrame("8 x 8 - il Re e' morto");
 				
 				ImageIcon image = new ImageIcon("../Scacchi/src/img/logo.jpg");
 				img = new JLabel(image, SwingConstants.CENTER);
 				img.setVerticalAlignment(SwingConstants.CENTER);
 				partita = new JButton("NUOVA PARTITA");
 				esci = new JButton("ESCI");
-				label = new JLabel("© Luisa Zanini & Lisa Bianconi");
+				label = new JLabel("<html> &copy; Luisa Zanini & Lisa Bianconi </html>");
 
 				partita.addActionListener(new ActionListener() {
 
