@@ -1,5 +1,8 @@
-import java.awt.Image;
+import java.awt.*;
 
+/**
+ * Classe che descrive ogni Pezzo degli scacchi
+ */
 public abstract class Pezzo {
 
 	protected String nome;
@@ -25,9 +28,9 @@ public abstract class Pezzo {
 	}
 	
 	/** 
-	 * Stringa vuota: la casella Ë libera
-	 * Colore uguale a "nero": la casella Ë occupata da un pezzo nero
-	 * Colore uguale a "bianco": la casella Ë occupata da un pezzo bianco
+	 * Stringa vuota: la casella √® libera
+	 * Colore uguale a "nero": la casella √® occupata da un pezzo nero
+	 * Colore uguale a "bianco": la casella √® occupata da un pezzo bianco
 	 */
 	public void setPos(PosizioneCaselle pos){
 		
@@ -36,7 +39,13 @@ public abstract class Pezzo {
 		posizione.CasellaOccupata = colore; 
 	}
 	
+	/**
+	 * Metodo usato per ottenere tutte le mosse permesse di un pezzo situato in una certa posizione iniziale
+	 */
 	public abstract PosizioneCaselle[] MossePermesse(PosizioneCaselle pos[][]);
 	
+	/**
+	 * Metodo usato per i pedoni, poich√® solo loro mangiano in modo diverso da come muovono
+	 */
 	public abstract PosizioneCaselle[] MossePermesseMangia(PosizioneCaselle pos[][]);
 }
