@@ -1,10 +1,12 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-
 import javax.sound.sampled.*;
 import javax.swing.*;
 
+/**
+ * Classe che crea una nuova partita
+ */
 public class NuovaPartita{
 
 	private static Clip clip;
@@ -95,7 +97,7 @@ public class NuovaPartita{
 
 			pBianco[i] = new Pedone("bianco", imgB[5], pos[i-8][6]);
 		
-		NewScacchi = new JFrame("8 x 8 - il Re è morto");
+		NewScacchi = new JFrame("8 x 8 - il Re e' morto");
 
 		Container cont = NewScacchi.getContentPane();
 		NewScacchi.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
