@@ -1,9 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
-public class Window {
+public class Main {
 
 	private static JLabel img;
 	private static JButton partita;
@@ -23,14 +22,14 @@ public class Window {
 				JPanel p1 = new JPanel();
 				JPanel p2 = new JPanel();
 				
-				Scacchi = new JFrame("8 x 8 - il Re è morto");
+				Scacchi = new JFrame("8 x 8 - il Re Ã¨ morto");
 				
 				ImageIcon image = new ImageIcon("../Scacchi/src/img/logo.jpg");
 				img = new JLabel(image, SwingConstants.CENTER);
 				img.setVerticalAlignment(SwingConstants.CENTER);
 				partita = new JButton("NUOVA PARTITA");
 				esci = new JButton("ESCI");
-				label = new JLabel("© Luisa Zanini & Lisa Bianconi");
+				label = new JLabel("Â© Luisa Zanini & Lisa Bianconi");
 
 				partita.addActionListener(new ActionListener() {
 
