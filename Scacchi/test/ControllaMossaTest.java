@@ -1,13 +1,7 @@
 import static org.junit.Assert.*;
-
-import java.awt.Image;
-import java.awt.Toolkit;
-
-import javax.swing.JFrame;
-
-import org.junit.Before;
-import org.junit.Test;
-
+import java.awt.*;
+import javax.swing.*;
+import org.junit.*;
 
 public class ControllaMossaTest {
 
