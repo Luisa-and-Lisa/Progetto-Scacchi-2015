@@ -1,0 +1,34 @@
+<html>
+<body>
+<center><font size=6 color=rgb(244,72,12)><b> REGOLE DEL GIOCO <i> "8 x 8 - il Re &egrave; morto" </i></b></font></center><br /> 
+<b> Come si spostano i pezzi </b><br /> 
+Negli scacchi ci sono 32 pezzi, 16 di colore bianco e 16 di colore nero, ciascuno dei sei diversi tipi di pezzi si muove diversamente. <br /> I Pezzi non possono muoversi attraverso altri pezzi (anche se il Cavallo pu&ograve; saltare altri pezzi), e non possono mai muoversi in una casella con uno dei propri pezzi. Tuttavia, essi possono essere spostati per prendere il posto di un pezzo avversario che viene poi catturato. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/NRe.png" hspace="50"><b> Il Re </b><img src="file:../Scacchi/src/img/BRe.png" hspace="50"></center><br />
+&Eacute; il pezzo pi&ugrave; importante. Il suo valore &egrave; inestimabile perch&egrave; senza Re non si pu&ograve; giocare a scacchi. Il Re &egrave; imprendibile e resta sulla scacchiera fino alla fine della partita, anche quando &egrave; scacco matto. 
+Il Re pu&ograve; muoversi solo di una casella in qualsiasi direzione su, gi&ugrave;, ai lati e in diagonale. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/BRegina.png" hspace="50"><b> La Regina </b><img src="file:../Scacchi/src/img/NRegina.png" hspace="50"></center><br />
+&Eacute; il pezzo pi&ugrave; potente, pu&ograve; scegliere ad ogni mossa se muoversi come un Alfiere o come una Torre, ovvero in qualsiasi direzione. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/NTorre.png" hspace="50"><b> La Torre </b><img src="file:../Scacchi/src/img/BTorre.png" hspace="50"></center><br />
+La Torre pu&ograve; muoversi in una qualunque direzione casa della stessa riga o della stessa colonna rispetto a quella in cui si trova, purch&egrave; per raggiungerla non debba attraversare case occupate da pezzi (amici o avversari) e purch&egrave; la casa di arrivo non sia occupata da un pezzo amico. Se la casa di arrivo &egrave; occupata da un pezzo avversario, la torre lo cattura, e il pezzo avversario viene eliminato dalla scacchiera. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/BAlfiere.png" hspace="50"><b> L&#180;Alfiere </b><img src="file:../Scacchi/src/img/NAlfiere.png" hspace="50"></center><br />
+Pu&ograve; muoversi su una qualunque casa della stessa diagonale rispetto a quella in cui si trova, purch&egrave; per raggiungerla non debba attraversare case occupate da pezzi (amici o avversari) e purch&egrave; la casa di arrivo non sia occupata da un pezzo amico. Se la casa di arrivo &egrave; occupata da un pezzo avversario, l&#180;alfiere lo cattura, e il pezzo avversario viene eliminato dalla scacchiera. Nota che ciascun Alfiere non cambia mai colore delle caselle, per cui i giocatori parlano di alfieri "campochiaro" o "camposcuro", a seconda del colore delle case in cui si trovano. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/NCavallo.png" hspace="50"><b> Il Cavallo </b><img src="file:../Scacchi/src/img/BCavallo.png" hspace="50"></center><br />
+Il Cavallo pu&ograve; muoversi su una qualunque delle case raggiungibili con uno spostamento orizzontale di una casa e uno verticale di due (o viceversa), disegnando una specie di "L". 
+Tale spostamento &egrave; per&ograve; "virtuale", nel senso che il Cavallo, a differenza di Torre, Alfiere e Regina, si porta direttamente sulla nuova casa, senza necessit&agrave; che il percorso descritto sia sgombro. Se la casa di arrivo &egrave; occupata da un pezzo avversario, il cavallo lo cattura, e il pezzo avversario viene eliminato dalla scacchiera. Si noti che un Cavallo nel centro della scacchiera pu&ograve; muovere al massimo in otto differenti caselle, e che ad ogni mossa il Cavallo cambia colore di casella. <br /><br />
+
+<center><img src="file:../Scacchi/src/img/BPedone.png" hspace="50"><b> Il Pedone </b><img src="file:../Scacchi/src/img/NPedone.png" hspace="50"></center><br />
+Un Pedone pu&ograve; muovere avanti di una casella, se questa &egrave; libera. Il Pedone non pu&ograve; muovere all&#180;indietro. 
+I Pedoni sono i soli pezzi che catturano diversamente da come si muovono. Possono catturare un pezzo nemico se questo si trova in una delle due caselle diagonalmente in avanti, 
+ma non pu&ograve; muovere in queste caselle se esse sono libere. Se un pedone avanza fino all&#180;ottava traversa, allora viene promosso, ossia sostituito con una Regina, una Torre, un Alfiere o un Cavallo (a scelta del giocatore). Nella pratica viene quasi sempre scambiato con la Regina. <br /><br />
+
+<b> Regole non implementate in "8x8 il Re &egrave; morto" </b></center><br />
+In questo gioco non &egrave; implementata l&#180;intelligenza artificiale, &egrave; solo un gioco tra persone.
+Non &egrave; implementato il movimento iniziale del Pedone che gli permette di muoversi di due caselle in avanti (purch&egrave; siano libere),
+e quindi non &egrave; previsto l&#180;en passant. Non &egrave; implementato l&#180;arrocco. <br />
+</body>
+</html>
