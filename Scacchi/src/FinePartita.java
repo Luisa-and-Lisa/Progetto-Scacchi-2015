@@ -2,6 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * Classe che comunica la fine di una partita (Scacco Matto o Patta).
+ * Si puo' iniziare una nuova partita o uscire dal gioco.
+ */
 public class FinePartita implements ActionListener{
 
 	private JFrame Frame;
