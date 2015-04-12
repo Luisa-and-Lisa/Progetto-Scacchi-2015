@@ -186,9 +186,12 @@ public class NuovaPartita{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				clip.stop();
-				clip.setFramePosition(0); 
-				clip.loop(-1);
+				if (clip.isRunning());
+				else{
+					clip.stop();
+					clip.setFramePosition(0); 
+					clip.loop(-1);
+				}
 				
 			}
 		});
