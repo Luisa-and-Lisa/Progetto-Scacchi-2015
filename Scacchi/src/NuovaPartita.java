@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 
@@ -21,6 +22,10 @@ public class NuovaPartita{
 	private JMenuItem Regole = new JMenuItem("Regole Gioco");
 	private JMenuItem Informazioni = new JMenuItem("Informazioni");
 	private JMenuItem Esci = new JMenuItem("Uscita");
+	
+	private JMenu Musica = new JMenu("Musica");
+	private JMenuItem Play = new JMenuItem("Play", new ImageIcon("../Scacchi/src/img/play_button.png"));
+	private JMenuItem Stop = new JMenuItem("Stop", new ImageIcon("../Scacchi/src/img/stop.png"));
 
 	public NuovaPartita(){
 		
@@ -128,6 +133,7 @@ public class NuovaPartita{
 
 		NewScacchi.setJMenuBar(menu);
 		menu.add(File);
+		menu.add(Musica);
 
 		NuovaPartita.addActionListener(new ActionListener(){
 
@@ -175,9 +181,31 @@ public class NuovaPartita{
 					System.exit(0);
 			}
 		});
+		
+		Play.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clip.stop();
+				clip.setFramePosition(0); 
+				clip.loop(-1);
+				
+			}
+		});
+		
+		Stop.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				clip.stop();
+			}
+		});
+		
 		File.add(NuovaPartita);
 		File.add(Regole);
 		File.add(Informazioni);
 		File.add(Esci);
+		Musica.add(Play);
+		Musica.add(Stop);
 	}
 }
