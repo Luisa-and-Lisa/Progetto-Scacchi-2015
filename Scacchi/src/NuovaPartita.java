@@ -204,9 +204,11 @@ public class NuovaPartita{
 			}
 		});
 		
+		NuovaPartita.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_MASK));
 		File.add(NuovaPartita);
 		File.add(Regole);
 		File.add(Informazioni);
+		Esci.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		File.add(Esci);
 		Musica.add(Play);
 		Musica.add(Stop);
