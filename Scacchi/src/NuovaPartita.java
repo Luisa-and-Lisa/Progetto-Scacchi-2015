@@ -24,8 +24,8 @@ public class NuovaPartita{
 	private JMenuItem Esci = new JMenuItem("Uscita");
 	
 	private JMenu Musica = new JMenu("Musica");
-	private JMenuItem Play = new JMenuItem("Play", new ImageIcon("../Scacchi/src/img/play_button.png"));
-	private JMenuItem Stop = new JMenuItem("Stop", new ImageIcon("../Scacchi/src/img/stop.png"));
+	private JMenuItem Play = new JMenuItem("Play", new ImageIcon("../Scacchi/src/img/Play.png"));
+	private JMenuItem Stop = new JMenuItem("Stop", new ImageIcon("../Scacchi/src/img/Stop.png"));
 
 	public NuovaPartita(){
 		
