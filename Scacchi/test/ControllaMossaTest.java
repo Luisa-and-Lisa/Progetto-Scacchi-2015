@@ -124,9 +124,9 @@ public class ControllaMossaTest {
 		pBianco[1] = new Alfiere ("bianco", imgB[3], pos[2][7]);
 		
 		ControllaMossa mossa = new ControllaMossa(Frame, pos, pBianco, pNero);
-		int Turno = 0;
-		//Patta -> Re nero contro Re e Alfiere bianco 
-		assertTrue(mossa.VerificaPatta(pNero, pBianco, Turno)); 
+		int Turno = 1;
+		//Patta -> Re e Alfiere bianco contro Re nero
+		assertTrue(mossa.VerificaPatta(pBianco, pNero, Turno)); 
 	}
 	
 	@Test
