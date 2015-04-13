@@ -41,7 +41,6 @@ public class NuovaPartita{
 			
 			clip.loop(Clip.LOOP_CONTINUOUSLY);
 			clip.loop(-1);
-			//clip.start();
 		} catch (UnsupportedAudioFileException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
