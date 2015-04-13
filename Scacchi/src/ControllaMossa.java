@@ -208,7 +208,7 @@ public class ControllaMossa extends JPanel{
 		//Re contro Re e Alfiere o Re e Cavallo
 		if (PezziAvvRimasti.size() == 0 && PezziRimasti.size() == 1 && (PezziRimasti.get(0).nome == "Alfiere" || PezziRimasti.get(0).nome == "Cavallo")) 
 			return true;
-		else if (PezziRimasti.size() == 0 && PezziAvvRimasti.size() == 1 && (PezziAvvRimasti.get(0).nome == "Alfiere" || PezziRimastiAvv.get(0).nome == "Cavallo")) 
+		else if (PezziRimasti.size() == 0 && PezziAvvRimasti.size() == 1 && (PezziAvvRimasti.get(0).nome == "Alfiere" || PezziAvvRimasti.get(0).nome == "Cavallo")) 
 			return true;
 		//Re contro Re
 		else if (PezziRimasti.size() == 0 && PezziAvvRimasti.size() == 0) 
