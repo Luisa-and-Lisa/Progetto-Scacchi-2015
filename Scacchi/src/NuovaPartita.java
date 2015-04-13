@@ -10,7 +10,7 @@ import javax.swing.*;
  */
 public class NuovaPartita{
 
-	private static Clip clip;
+	private Clip clip;
 	private Pezzo [] pBianco = new Pezzo[16];
 	private Pezzo [] pNero = new Pezzo[16];
 	private PosizioneCaselle[][] pos = new PosizioneCaselle[8][8]; //Posizione dei pezzi sulla scacchiera
@@ -119,7 +119,7 @@ public class NuovaPartita{
 		m.setPointer(m);
 		m.setBounds(730, 310, width-740, 100);
 		
-		Scacchiera s = new Scacchiera(pBianco, pNero, pos, 0, m);
+		Scacchiera s = new Scacchiera(pBianco, pNero, pos, 0, m, clip);
 		s.setBounds(0, 0, 720, 720);
 		
 		cont.add(pmB);

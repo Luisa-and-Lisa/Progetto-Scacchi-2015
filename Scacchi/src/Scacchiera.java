@@ -2,12 +2,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.geom.*; 
+import javax.sound.sampled.*;
 
 /**
  * Classe che crea e disegna la scacchiera 
  */
 public class Scacchiera extends JPanel implements MouseListener, MouseMotionListener{
 	
+	private Clip clip;
 	private Shape [][] board; 
 	private Pezzo [] pBianco;
 	private Pezzo [] pNero;
@@ -24,7 +26,7 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 	private static int Coord[] = new int[2]; //Coordinate x e y della scacchiera
 	private int pCliccato = 0;
 	
-	public Scacchiera(Pezzo[] pBianco,Pezzo[] pNero, PosizioneCaselle[][] pos, int Turno, ControllaMossa Mossa){
+	public Scacchiera(Pezzo[] pBianco,Pezzo[] pNero, PosizioneCaselle[][] pos, int Turno, ControllaMossa Mossa, Clip clip){
 		
 		super();
 		board = new Shape[8][8];
@@ -33,6 +35,7 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 		this.pos = pos;
 		this.Turno = Turno;
 		this.Mossa = Mossa;
+		this.clip = clip;
 		
 		MediaTracker mt= new MediaTracker(this);
 		for(int i=0;i<16;i++){
@@ -182,7 +185,7 @@ public class Scacchiera extends JPanel implements MouseListener, MouseMotionList
 			y = e.getY() - 40;
 	    		Coord = PixelToCoord(x,y);
 	        	PosizioneCaselle posFinale = pos[Coord[0]][Coord[1]];
-	        	Turno = Mossa.Sposta(ProxPezzo, posIniziale, posFinale, Turno, false);
+	        	Turno = Mossa.Sposta(ProxPezzo, posIniziale, posFinale, Turno, false, clip);
 			repaint();
 			pCliccato--;
 			removeMouseMotionListener(this);

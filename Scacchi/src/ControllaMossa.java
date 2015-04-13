@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import javax.sound.sampled.*;
 
 /**
  * Classe che effettua tutti i controlli su una mossa
  */
 public class ControllaMossa extends JPanel{
 	
+	private Clip clip;
 	private ControllaMossa Mossa;
 	private PosizioneCaselle pos[][];
 	private PosizioneCaselle MossePermesse[];
@@ -33,7 +35,7 @@ public class ControllaMossa extends JPanel{
 	/**
 	 * Studia l'avanzamento di un pezzo sulla scacchiera
 	 */
-	public int Sposta(Pezzo ProxPezzo, PosizioneCaselle posIniziale, PosizioneCaselle posFinale, int TurnoIniziale, boolean promozione){
+	public int Sposta(Pezzo ProxPezzo, PosizioneCaselle posIniziale, PosizioneCaselle posFinale, int TurnoIniziale, boolean promozione, Clip clip){
 		
 		Pezzo Pezzi[];
 		Pezzo PezziAvv[];
@@ -68,12 +70,12 @@ public class ControllaMossa extends JPanel{
 				JOptionPane.showMessageDialog(null, "SCACCO AL RE " + coloreAvv.toUpperCase(), "ATTENZIONE", JOptionPane.INFORMATION_MESSAGE, icona); 
 				// Controlla lo Scacco Matto
 				if (VerificaScaccoMatto(PezziAvv, TurnoFinale))
-					new FinePartita(Frame, coloreAvv, "ScaccoMatto");
+					new FinePartita(Frame, coloreAvv, "ScaccoMatto", clip);
 			}
 			// Verifica la situazione di Stallo e di partita Patta
 			else if (!Scacco){
 				if (VerificaPatta(Pezzi, PezziAvv, TurnoFinale))
-					new FinePartita(Frame, coloreAvv, "Patta");
+					new FinePartita(Frame, coloreAvv, "Patta", clip);
 			}
 		}	
 		return TurnoFinale;
@@ -129,7 +131,7 @@ public class ControllaMossa extends JPanel{
 		
 		// Controlla se il pedone mosso e' da promuovere
 		if (posTrovata == true && ProxPezzo.nome == "Pedone" && (ProxPezzo.getPos().CoordY == 0 || ProxPezzo.getPos().CoordY == 7))
-			new Promozione(Frame, ProxPezzo, pBianco, pNero, Mossa, Turno);
+			new Promozione(Frame, ProxPezzo, pBianco, pNero, Mossa, Turno, clip);
 		
 		if (posTrovata == true){
 			if (Turno == 0)

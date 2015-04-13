@@ -1,13 +1,14 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
+import javax.sound.sampled.*;
 
 /**
  * Classe per la promozione di un pedone
  */
 public class Promozione implements ActionListener{
 	
+	private Clip clip;
 	private Pezzo Pezzo;
 	private Pezzo PromPezzo[];
 	private Pezzo pBianco[];
@@ -20,7 +21,7 @@ public class Promozione implements ActionListener{
 	private JButton Torre, Cavallo, Alfiere, Regina;
 	private Image imgTorre, imgCavallo, imgAlfiere, imgRegina;
 	
-	public Promozione(JFrame Frame, Pezzo Pezzo, Pezzo pBianco[], Pezzo pNero[], ControllaMossa Mossa, int Turno){
+	public Promozione(JFrame Frame, Pezzo Pezzo, Pezzo pBianco[], Pezzo pNero[], ControllaMossa Mossa, int Turno, Clip clip){
 
 		this.Frame = Frame;
 		this.Pezzo = Pezzo;
@@ -28,6 +29,7 @@ public class Promozione implements ActionListener{
 		this.pNero = pNero;
 		this.Mossa = Mossa;
 		this.Turno = Turno;
+		this.clip = clip;
 
 		JPanel p1 = new JPanel();
 		JPanel p2 = new JPanel();
@@ -126,7 +128,7 @@ public class Promozione implements ActionListener{
 
 		Promozione.dispose();
 		
-		Mossa.Sposta(PromPezzo[pos], PromPezzo[pos].getPos(), PromPezzo[pos].getPos(), Turno, true);
+		Mossa.Sposta(PromPezzo[pos], PromPezzo[pos].getPos(), PromPezzo[pos].getPos(), Turno, true, clip);
 		
 		Frame.repaint();
 	}

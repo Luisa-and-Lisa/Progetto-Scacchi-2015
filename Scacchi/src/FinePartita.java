@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import javax.sound.sampled.*;
 import javax.swing.*;
 
 /**
@@ -8,6 +9,7 @@ import javax.swing.*;
  */
 public class FinePartita implements ActionListener{
 
+	private Clip clip;
 	private JFrame Frame;
 	private JFrame FinePartita;
 	private JButton partita;
@@ -17,11 +19,12 @@ public class FinePartita implements ActionListener{
 	private JLabel label;
 	private JLabel vittoria;
 	
-	public FinePartita(JFrame Frame, String Colore, String Tipo){
+	public FinePartita(JFrame Frame, String Colore, String Tipo, Clip clip){
 
 		this.Frame = Frame;
 		this.Colore = Colore;
 		this.Tipo = Tipo;
+		this.clip = clip;
 		
 		FinePartita = new JFrame("Fine della partita");
 		
@@ -91,6 +94,7 @@ public class FinePartita implements ActionListener{
 		if(scelta.equals("partita")){
 			FinePartita.dispose();
 			Frame.dispose();
+			clip.stop();
 			new NuovaPartita();
 		}
 
