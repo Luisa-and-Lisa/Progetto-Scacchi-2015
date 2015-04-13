@@ -3,6 +3,9 @@ import java.awt.*;
 import javax.swing.*;
 import org.junit.*;
 
+/**
+ * Classe Test su ControllaMossa.java
+ */ 
 public class ControllaMossaTest {
 
 	private PosizioneCaselle pos[][] = new PosizioneCaselle[8][8];
@@ -42,16 +45,16 @@ public class ControllaMossaTest {
 		Pezzo pBianco[] = new Pezzo[2];
 		Pezzo pNero[] = new Pezzo[1];
 				
-		pNero[0] = new Re ("nero", imgN[0], pos[4][0]);
+		pNero[0] = new Re ("nero", imgN[0], pos[3][4]);
 
 		pBianco[0] = new Re ("bianco", imgB[0], pos[4][7]);
-		pBianco[1] = new Regina ("bianco", imgB[4], pos[4][7]);
+		pBianco[1] = new Regina ("bianco", imgB[4], pos[3][7]);
 		
 		ControllaMossa mossa = new ControllaMossa(Frame, pos, pBianco, pNero);
 		int Turno = 1;
-		//Mossa impossibile -> Re nero contro regina bianca, rimane il turno dei neri (1)
-		assertEquals(1, mossa.Controlla(pNero[0], pNero[0].getPos(), pos[4][1], Turno, true)); 
-		//Scacco al Re nero dalla regina bianca
+		//Mossa impossibile -> Re nero contro Regina bianca, rimane il turno dei neri (1)
+		assertEquals(1, mossa.Controlla(pNero[0], pNero[0].getPos(), pos[3][5], Turno, true)); 
+		//Scacco al Re nero dalla Regina bianca
 		assertTrue(mossa.VerificaScaccoAlRe(pBianco, pNero[0].getPos())); 
 	}
 	
@@ -87,7 +90,7 @@ public class ControllaMossaTest {
 		
 		ControllaMossa mossa = new ControllaMossa(Frame, pos, pBianco, pNero);
 		int Turno = 1;
-		//Patta -> tocca ai neri ma il Re non puÚ muoversi 
+		//Patta -> tocca ai neri ma il Re non pu√≤ muoversi 
 		assertTrue(mossa.VerificaPatta(pBianco, pNero, Turno)); 
 	}
 	
@@ -109,7 +112,7 @@ public class ControllaMossaTest {
 	}
 	
 	@Test
-	//Verifica se la mossa del pedone Ë consentita
+	//Verifica se la mossa del Pedone √® consentita
 	public void test5_Controlla() {
 		
 		Pezzo pBianco[] = new Pezzo[2];
