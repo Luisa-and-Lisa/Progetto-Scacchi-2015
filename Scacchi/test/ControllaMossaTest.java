@@ -90,7 +90,7 @@ public class ControllaMossaTest {
 		
 		ControllaMossa mossa = new ControllaMossa(Frame, pos, pBianco, pNero);
 		int Turno = 1;
-		//Patta -> tocca ai neri ma il Re non può muoversi 
+		//Patta -> tocca ai neri ma il Re non puo' muoversi 
 		assertTrue(mossa.VerificaPatta(pBianco, pNero, Turno)); 
 	}
 	
@@ -112,8 +112,26 @@ public class ControllaMossaTest {
 	}
 	
 	@Test
-	//Verifica se la mossa del Pedone è consentita
+	//Controlla la Patta
 	public void test5_Controlla() {
+		
+		Pezzo pBianco[] = new Pezzo[2];
+		Pezzo pNero[] = new Pezzo[1];
+
+		pNero[0] = new Re ("nero", imgN[0], pos[4][0]);
+
+		pBianco[0] = new Re ("bianco", imgB[0], pos[4][7]);
+		pBianco[1] = new Alfiere ("bianco", imgB[3], pos[2][7]);
+		
+		ControllaMossa mossa = new ControllaMossa(Frame, pos, pBianco, pNero);
+		int Turno = 0;
+		//Patta -> Re nero contro Re e Alfiere bianco 
+		assertTrue(mossa.VerificaPatta(pNero, pBianco, Turno)); 
+	}
+	
+	@Test
+	//Verifica se la mossa del Pedone e' consentita
+	public void test6_Controlla() {
 		
 		Pezzo pBianco[] = new Pezzo[2];
 		Pezzo pNero[] = new Pezzo[3];
