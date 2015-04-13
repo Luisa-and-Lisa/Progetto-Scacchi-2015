@@ -7,7 +7,7 @@ import org.junit.*;
  */ 
 public class PezzoTest {
 	
-	protected PosizioneCaselle[] PosizionePermessa = new PosizioneCaselle[28]; //al massimo 8 posizioni possibili
+	protected PosizioneCaselle[] PosizionePermessa = new PosizioneCaselle[28];
 	private PosizioneCaselle pos[][] = new PosizioneCaselle[8][8];
 	
 	@Before
